@@ -13,7 +13,7 @@ OS ごとの差分は設定内で `vim.fn.has("win32")` により分岐してい
 | [yazi](https://github.com/sxyazi/yazi) | yazi.nvim | ○ |
 | [tree-sitter CLI](https://github.com/tree-sitter/tree-sitter) + C コンパイラ | nvim-treesitter のパーサービルド | ○ (コンパイラは MSVC) |
 | Nerd Font | アイコン表示 (例: [JetBrainsMono Nerd Font](https://www.nerdfonts.com/)) | ○ |
-| [ImageMagick](http://imagemagic.org/) (`magick`) | image.nvim の画像変換 | 不要 |
+| [ImageMagick](https://imagemagick.org/) (`magick`) | image.nvim の画像変換 | 不要 |
 | [mermaid-cli](https://github.com/mermaid-js/mermaid-cli) (`mmdc`) | diagram.nvim の Mermaid 描画 | 不要 |
 | Kitty graphics protocol 対応ターミナル (Ghostty / Kitty / WezTerm) | image.nvim の画像表示 | 不要 |
 
@@ -68,10 +68,10 @@ winget install --id tree-sitter.tree-sitter-cli -e
 
 ### 設定の配置
 
-Windows 版 Neovim は `~/.config/nvim` ではなく `%LOCALAPPDATA%\nvim` を読むため、クローン下リポジトリへジャンクションを張ります（管理者権限は不要）。
+Windows 版 Neovim は `~/.config/nvim` ではなく `%LOCALAPPDATA%\nvim` を読むため、クローンしたリポジトリへジャンクションを張ります（管理者権限は不要）。
 
 ```bash
-git clone https:/github.com/syn-z27/nvim-dotfiles.git ~/projects/nvim-dotfiles
+git clone https://github.com/syn-z27/nvim-dotfiles.git ~/projects/nvim-dotfiles
 cmd //c mklink //J "%LOCALAPPDATA%\\nvim" "%USERPROFILE%\\projects\\nvim-dotfiles"
 ```
 
