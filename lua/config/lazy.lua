@@ -31,7 +31,9 @@ require("lazy").setup({
   -- colorscheme that will be used when installing plugins.
   install = { colorscheme = { "habamax" } },
   -- automatically check for plugin updates
-  checker = { enabled = true },
+  -- Windows ではプロセス起動が重く、起動直後に全プラグイン分の git を実行すると
+  -- 数秒間 UI が固まるため無効にする (更新はダッシュボードの `u` / :Lazy update で行う)
+  checker = { enabled = vim.fn.has("win32") == 0 },
   -- image.nvim は processor = "magick_cli" を使うため luarocks 不要
   rocks = { enabled = false },
 })

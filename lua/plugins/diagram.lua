@@ -9,6 +9,8 @@
 --   - events: BufWinEnter とノーマルモード復帰時に再描画。
 return {
   "3rd/diagram.nvim",
+  -- 描画バックエンドの image.nvim を Windows では読み込まないため、こちらも無効にする
+  cond = vim.fn.has("win32") == 0,
   dependencies = { "3rd/image.nvim" },
   ft = { "markdown" },
   opts = function()

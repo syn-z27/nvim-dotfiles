@@ -8,6 +8,8 @@
 --   - only_render_image_at_cursor=false: カーソル位置に関係なく画像を常時描画。
 return {
   "3rd/image.nvim",
+  -- Windows (Windows Terminal) は Kitty graphics protocol 非対応のため読み込まない
+  cond = vim.fn.has("win32") == 0,
   event = { "BufReadPre", "BufNewFile" },
   opts = {
     backend = "kitty",

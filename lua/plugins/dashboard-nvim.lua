@@ -15,6 +15,11 @@ return {
       week_header = {
         enable = true
       },
+      -- Windows ではプロジェクト一覧が空のとき "empty project" 行で <CR> を押すと
+      -- hyper.lua のパス解析が nil になりエラーになるため、プロジェクト欄を出さない
+      project = {
+        enable = vim.fn.has("win32") == 0
+      },
       shortcut = { {
         desc = " Update",
         group = "@property",
@@ -35,7 +40,8 @@ return {
       } }
     }
   },
-  config = function()
+  config = function(_, opts)
+    require("dashboard").setup(opts)
     vim.api.nvim_create_user_command("DA", "Dashboard", {})
   end
 }

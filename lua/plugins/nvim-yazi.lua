@@ -17,9 +17,10 @@ return {
       function()
         -- yaziで同じファイルを選び直すと :edit が reload になり、
         -- 未保存の変更があると E37 になるため、開く前に保存しておく。
-        if vim.bo.modified and vim.bo.modifiable and vim.api.nvim_buf_get_name ~= "" then
+        if vim.bo.modified and vim.bo.modifiable and vim.api.nvim_buf_get_name(0) ~= "" then
           vim.cmd("silent! write")
         end
+        vim.cmd("Yazi")
       end, 
       desc = "Open yazi at the current file" }
   },
