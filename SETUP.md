@@ -7,7 +7,7 @@ OS ごとの差分は設定内で `vim.fn.has("win32")` により分岐してい
 
 | ツール | 用途 | Windows |
 |---|---|---|
-| Neovim >= 0.10 | 本体 | ○ |
+| Neovim >= 0.12 | 本体 | ○ |
 | Git | lazy.nvim / プラグインのインストール | ○ |
 | [ripgrep](https://github.com/BurntSushi/ripgrep) | any-jump.vim、Telescope のgrep検索 | ○ |
 | [yazi](https://github.com/sxyazi/yazi) | yazi.nvim | ○ |
